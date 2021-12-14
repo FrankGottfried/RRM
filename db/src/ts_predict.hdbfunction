@@ -1,0 +1,22 @@
+FUNCTION "ts_predict"( )
+    RETURNS table ("TIMESTAMP" integer, "FORECAST" double, "SE" double, "LO80" double, "HI80" double, "LO95" double, "HI95" double)
+    LANGUAGE SQLSCRIPT
+    SQL SECURITY INVOKER AS
+BEGIN
+    /*****************************
+        Write your function logic
+    ****************************/
+    DECLARE param_name VARCHAR(5000) ARRAY;
+    DECLARE int_value INTEGER ARRAY;
+    DECLARE double_value DOUBLE ARRAY;
+    DECLARE string_value VARCHAR(5000) ARRAY;
+    param_name[1] := N'FORECAST_LENGTH';
+    int_value[1] := 10;
+    double_value[1] := NULL;
+    string_value[1] := NULL;
+    in_0 = select * from "TIMESERIES_TEST";
+    in_1 = select * from "PAL_AUTOARIMA_MODEL_TBL";
+    params = UNNEST(:param_name, :int_value, :double_value, :string_value);
+    CALL "pal::arima_forecast"(:in_0, :in_1, :params, out_0);
+    return select * from :out_0; 
+END;

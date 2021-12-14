@@ -1,0 +1,5 @@
+column table "PAL_AUTOARIMA_MODEL_TBL" (
+    "KEY" NVARCHAR(100),
+    "VALUEY" NVARCHAR(5000)
+)
+COMMENT 'Timeseries model table'
