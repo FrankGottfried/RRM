@@ -1,0 +1,14 @@
+{
+  "pal::autoarima": {
+    "target": {
+      "object": "PAL_AUTOARIMA",
+      "schema": "_SYS_AFL"
+    }
+  },
+  "pal::arima_forecast": {
+    "target": {
+      "object": "PAL_ARIMA_FORECAST",
+      "schema": "_SYS_AFL"
+    }
+  }
+}

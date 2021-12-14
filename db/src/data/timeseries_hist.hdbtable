@@ -1,0 +1,6 @@
+column table "TIMESERIES_HIST" (
+    "TIMESTAMP" INTEGER  unique not null COMMENT 'Timestamp',
+    "Y" DOUBLE COMMENT 'Target',
+    PRIMARY KEY ("TIMESTAMP")
+)
+COMMENT 'Timeseries historic data'

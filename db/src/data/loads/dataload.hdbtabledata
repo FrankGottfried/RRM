@@ -1,0 +1,28 @@
+{
+    "format_version": 1,
+    "imports": [{
+	    "target_table": "TIMESERIES_HIST",
+	    "source_data": {
+		    "data_type": "CSV",
+		    "file_name": "train_autoarima.csv",
+		    "has_header": true,
+		    "dialect": "HANA",
+		    "type_config": {
+			    "delimiter": ","
+		    }
+	    }
+	    },
+        {
+            "target_table": "TIMESERIES_TEST",
+            "source_data": {
+                "data_type": "CSV",
+                "file_name": "test_autoarima.csv",
+                "has_header": true,
+                "dialect": "HANA",
+                "type_config": {
+                    "delimiter": ","
+                }
+            }
+            }
+    ]
+}		
